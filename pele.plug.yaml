@@ -1,0 +1,14 @@
+name: pele
+functions:
+  # Renders ```mermaid fenced code blocks.
+  #
+  # Deliberately the plug's only hook: no events, commands or syscalls. With
+  # nothing else to run, SilverBullet only boots this plug's worker (and so
+  # only parses the bundled Pele library) once a page shows a diagram.
+  mermaidWidget:
+    path: ./src/widget.ts:mermaidWidget
+    codeWidget: mermaid
+  # Lays a diagram out again for another width. The widget's iframe calls it
+  # through system.invokeFunction when the editor is narrower than the diagram.
+  renderSvg:
+    path: ./src/widget.ts:renderSvg

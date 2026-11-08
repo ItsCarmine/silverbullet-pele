@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8">
+  <base href="/">
+  <title>pele plug harness</title>
+  <style>
+    /* The SilverBullet 2.12 theme variables the plug reads, and the editor's
+       iframe widget styles (client/styles/theme.scss, _tokens.scss, editor.scss). */
+    html {
+      --ui-accent-color: #3569b8;
+      --subtle-color: #676767;
+      --danger-color: #dc3545;
+      --root-background-color: #fff;
+      --root-color: #20252d;
+      --editor-widget-background-color: rgb(238, 238, 238);
+      --subtle-background-color: rgba(72, 72, 72, 0.1);
+      color-scheme: light;
+    }
+    html[data-theme="dark"] {
+      --ui-accent-color: #79a9f2;
+      --subtle-color: #959595;
+      --danger-color: #f87171;
+      --root-background-color: #111;
+      --root-color: #e9edf2;
+      --editor-widget-background-color: rgba(72, 72, 72, 0.5);
+      --subtle-background-color: rgba(105, 105, 105, 0.1);
+      color-scheme: dark;
+    }
+    body {
+      margin: 0;
+      background: var(--root-background-color);
+      color: var(--root-color);
+      font: 18px/1.5 Menlo, monospace;
+    }
+    #editor {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 16px 20px;
+    }
+    .cm-line { padding: 0 2px; }
+    .quote { background: var(--subtle-background-color); padding: 4px 8px; }
+    .sb-fenced-code-iframe { background-color: transparent; }
+    .sb-fenced-code-iframe iframe {
+      width: 100%;
+      max-width: 100%;
+      padding: 0;
+      margin: 0 0 -2ch 0;
+      border: 1px solid var(--editor-widget-background-color);
+      border-radius: 5px;
+      display: block;
+    }
+    .narrow { width: 360px; }
+  </style>
+</head>
+<body>
+  <div id="editor"><div class="cm-content" id="content"></div></div>
+  <script type="module" src="/host.js"></script>
+</body>
+</html>

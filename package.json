@@ -1,0 +1,18 @@
+{
+  "name": "silverbullet-pele",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Render Mermaid diagrams in SilverBullet with Pele, fully offline",
+  "type": "module",
+  "scripts": {
+    "build": "plug-compile pele.plug.yaml && node scripts/add-notices.mjs",
+    "typecheck": "tsc --noEmit",
+    "test": "node --test test/*.test.ts",
+    "test:e2e": "node test/e2e.mjs"
+  },
+  "devDependencies": {
+    "@silverbulletmd/silverbullet": "2.12.0",
+    "pele": "1.13.0",
+    "typescript": "^5.9.3"
+  }
+}
